@@ -18,7 +18,10 @@ class CreateFacturaTable extends Migration
             $table->unsignedBigInteger('id_detalle');
             $table->unsignedBigInteger('id_cliente');
             $table->integer('precio');
+            $table->foreign('id_detalle')->references('id_detalle')->on('detalle');
+            $table->foreign('id_cliente')->references('id_cliente')->on('cliente');
             $table->timestamps();
+
         });
     }
 

@@ -22,6 +22,7 @@ class CreateUsuarioTable extends Migration
             $table->string('genero');
             $table->string('email')->unique();
             $table->string('password');
+            $table->foreign('id_cargo')->references('id_cargo')->on('cargo');
             $table->timestamps();
         });
     }

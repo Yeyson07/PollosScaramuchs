@@ -18,6 +18,7 @@ class CreateProveedorTable extends Migration
             $table->string('nombres');
             $table->string('apellido');
             $table->integer('celular');
+            $table->foreign('id_proveedor')->references('id_proveedor')->on('proveedor');
             $table->timestamps();
         });
 }

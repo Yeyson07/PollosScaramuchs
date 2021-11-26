@@ -18,6 +18,7 @@ class CreateMenuTable extends Migration
             $table->unsignedBigInteger('id_compra');
             $table->string('añadir_producto');
             $table->string('eliminar_producto');
+            $table->foreign('id_compra')->references('id_compra')->on('compra');
             $table->timestamps();
         });
     }
@@ -28,6 +29,7 @@ class CreateMenuTable extends Migration
      * @return void
      */
     public function down()
+    
     {
         Schema::dropIfExists('menu');
     }

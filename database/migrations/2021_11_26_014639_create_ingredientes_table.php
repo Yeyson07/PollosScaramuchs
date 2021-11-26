@@ -19,6 +19,7 @@ class CreateIngredientesTable extends Migration
             $table->string('nombre');
             $table->integer('precio');
             $table->date('fecha_vencimiento');
+            $table->foreign('id_proveedor')->references('id_proveedor')->on('proveedor');
             $table->timestamps();
         });
     }
