@@ -60,3 +60,7 @@ Route::get('factura/factura', [FacturaController::class, 'show']);
 Route::get('compra', [CompraController::class, 'index']);
 Route::get('compra/create', [CompraController::class, 'create']);
 Route::get('compra/compra', [CompraController::class, 'show']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
